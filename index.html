@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOLTMASTER - Advanced Electrical Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="antialiased">
+
+    <div id="cursor-aura"></div>
+    <div id="svg-tooltip" class="glassmorphism text-white"></div>
+
+    <!-- Header & Navbar -->
+    <header id="navbar" class="fixed top-0 left-0 w-full p-4 z-50 transition-all duration-300">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#home" class="text-3xl font-bold text-amber-400 font-orbitron">
+                <i class="fas fa-bolt-lightning"></i> VOLTMASTER
+            </a>
+            <nav class="hidden lg:flex items-center space-x-8">
+                <a href="#home" class="text-gray-300 hover:text-amber-400 transition-colors">Home</a>
+                <a href="#services" class="text-gray-300 hover:text-amber-400 transition-colors">Services</a>
+                <a href="#projects" class="text-gray-300 hover:text-amber-400 transition-colors">Projects</a>
+                <a href="#about" class="text-gray-300 hover:text-amber-400 transition-colors">About</a>
+                <a href="#contact" class="text-gray-300 hover:text-amber-400 transition-colors">Contact</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                 <button id="open-quote-wizard" class="hidden lg:block bg-amber-400 text-gray-900 font-bold py-2 px-5 rounded-md hover:bg-amber-500 transition-all duration-300 transform hover:scale-105">
+                    Get Quote
+                </button>
+                <label for="theme-toggle" class="cursor-pointer">
+                    <input type="checkbox" id="theme-toggle" class="hidden">
+                    <i class="fas fa-sun text-xl text-gray-300 hidden light-icon"></i>
+                    <i class="fas fa-moon text-xl text-amber-400 dark-icon"></i>
+                </label>
+                <button id="hamburger-btn" class="lg:hidden z-50 text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden fixed inset-0 glassmorphism">
+            <div class="flex flex-col items-center justify-center h-full space-y-8">
+                <button id="close-mobile-menu" class="absolute top-6 right-6 text-3xl">×</button>
+                <a href="#home" class="text-3xl font-orbitron mobile-nav-link">Home</a>
+                <a href="#services" class="text-3xl font-orbitron mobile-nav-link">Services</a>
+                <a href="#projects" class="text-3xl font-orbitron mobile-nav-link">Projects</a>
+                <a href="#about" class="text-3xl font-orbitron mobile-nav-link">About</a>
+                <a href="#contact" class="text-3xl font-orbitron mobile-nav-link">Contact</a>
+                <button id="open-quote-wizard-mobile" class="mt-8 bg-amber-400 text-gray-900 font-bold py-3 px-8 rounded-md text-xl">
+                    Get a Quote
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Home Page Content -->
+        <section id="home" class="page-content min-h-screen flex items-center relative overflow-hidden">
+            <div id="particles-js" class="absolute inset-0 z-0"></div>
+            <div class="container mx-auto px-4 z-10 text-center">
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-black uppercase text-white tracking-wider">
+                    Powering The <span class="text-amber-400">Future</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 mt-6 max-w-3xl mx-auto">
+                    Elite electrical engineering and services. Precision, safety, and innovation for your home and business.
+                </p>
+                <a href="#services" class="mt-12 inline-block bg-transparent border-2 border-amber-400 text-amber-400 font-bold py-3 px-10 rounded-md hover:bg-amber-400 hover:text-gray-900 transition-all duration-300 transform hover:scale-105">
+                    Explore Our Services
+                </a>
+            </div>
+            <a href="#services" class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white text-3xl animate-bounce">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </section>
+
+        <!-- NEW: Interactive Service Showcase -->
+        <section id="services" class="py-24">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-4xl font-bold uppercase">Our Services</h2>
+                    <div class="w-24 h-1 bg-amber-400 mx-auto mt-4"></div>
+                    <p class="mt-4 text-gray-400 max-w-2xl mx-auto">Click on a service to discover how we can power up your project with expertise and precision.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service Item 1 -->
+                    <div class="service-item glassmorphism p-8 rounded-lg text-center reveal cursor-pointer" data-service="ev">
+                        <i class="fas fa-charging-station text-5xl text-amber-400 mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2">Electrical Wiring & Installation</h3>
+                    </div>
+                    <!-- Service Item 2 -->
+                    <div class="service-item glassmorphism p-8 rounded-lg text-center reveal cursor-pointer" data-service="smart">
+                        <i class="fas fa-solar-panel text-5xl text-amber-400 mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2">Power Generation & Distribution</h3>
+                    </div>
+                    <!-- Service Item 3 -->
+                    <div class="service-item glassmorphism p-8 rounded-lg text-center reveal cursor-pointer" data-service="panel">
+                        <i class="fas fa-microchip text-5xl text-amber-400 mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2">Maintenance & Fault Diagnosis</h3>
+                    </div>
+                </div>
+                <!-- Service Details Container -->
+                <div id="service-details-container" class="mt-12"></div>
+            </div>
+        </section>
+
+        <!-- NEW: Our Process Timeline -->
+        <section class="py-24 bg-gray-900">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-4xl font-bold uppercase">Our Process</h2>
+                    <div class="w-24 h-1 bg-amber-400 mx-auto mt-4"></div>
+                    <p class="mt-4 text-gray-400 max-w-2xl mx-auto">A streamlined journey from initial contact to project completion, ensuring clarity and quality at every step.</p>
+                </div>
+                <div class="max-w-3xl mx-auto">
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item reveal pl-16 pb-12">
+                        <div class="timeline-dot bg-gray-800 border-2 border-amber-400 rounded-full flex items-center justify-center"><i class="fas fa-phone text-amber-400"></i></div>
+                        <h3 class="text-2xl font-bold text-amber-400 mb-2">01. Consultation</h3>
+                        <p class="text-gray-400">We start with a detailed discussion to understand your needs, goals, and the specifics of your project.</p>
+                    </div>
+                    <!-- Timeline Item 2 -->
+                    <div class="timeline-item reveal pl-16 pb-12">
+                        <div class="timeline-dot bg-gray-800 border-2 border-amber-400 rounded-full flex items-center justify-center"><i class="fas fa-file-signature text-amber-400"></i></div>
+                        <h3 class="text-2xl font-bold text-amber-400 mb-2">02. Planning & Quote</h3>
+                        <p class="text-gray-400">Our experts design a comprehensive plan and provide a transparent, detailed estimate for your approval.</p>
+                    </div>
+                    <!-- Timeline Item 3 -->
+                    <div class="timeline-item reveal pl-16 pb-12">
+                        <div class="timeline-dot bg-gray-800 border-2 border-amber-400 rounded-full flex items-center justify-center"><i class="fas fa-cogs text-amber-400"></i></div>
+                        <h3 class="text-2xl font-bold text-amber-400 mb-2">03. Execution</h3>
+                        <p class="text-gray-400">Our certified electricians carry out the installation or repair with precision, adhering to the highest safety standards.</p>
+                    </div>
+                    <!-- Timeline Item 4 -->
+                    <div class="timeline-item reveal pl-16">
+                        <div class="timeline-dot bg-gray-800 border-2 border-amber-400 rounded-full flex items-center justify-center"><i class="fas fa-clipboard-check text-amber-400"></i></div>
+                        <h3 class="text-2xl font-bold text-amber-400 mb-2">04. Final Review</h3>
+                        <p class="text-gray-400">We conduct a thorough final inspection and walkthrough to ensure everything is perfect and you are 100% satisfied.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW: Project Gallery -->
+        <section id="projects" class="py-24">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-4xl font-bold uppercase">Our Work</h2>
+                    <div class="w-24 h-1 bg-amber-400 mx-auto mt-4"></div>
+                </div>
+                <div class="flex justify-center space-x-4 mb-8 reveal">
+                    <button class="gallery-filter-btn active bg-amber-400 text-gray-900 font-bold py-2 px-5 rounded-md" data-filter="all">All</button>
+                    <button class="gallery-filter-btn bg-gray-700 text-white font-bold py-2 px-5 rounded-md" data-filter="residential">Residential</button>
+                    <button class="gallery-filter-btn bg-gray-700 text-white font-bold py-2 px-5 rounded-md" data-filter="commercial">Commercial</button>
+                </div>
+                <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="gallery-item" data-category="residential"><img src="images/homepoa.jpg" class="rounded-lg"></div>
+                    <div class="gallery-item" data-category="commercial"><img src="images/Office-Lighting-1.jpg" class="rounded-lg"></div>
+                    <div class="gallery-item" data-category="residential"><img src="images/Wiring.jpg" class="rounded-lg"></div>
+                    <div class="gallery-item" data-category="commercial"><img src="images/Retail.jpg" class="rounded-lg"></div>
+                    <div class="gallery-item" data-category="residential"><img src="images/panel.jpg" class="rounded-lg"></div>
+                    <div class="gallery-item" data-category="commercial"><img src="images/warehouse.jpg" class="rounded-lg"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Counter Section -->
+        <section class="py-24 bg-gray-900" style="background-image: linear-gradient(rgba(17, 24, 39, 0.9), rgba(17, 24, 39, 0.9)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop'); background-attachment: fixed; background-size: cover;">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="reveal"><h3 class="text-5xl font-orbitron font-bold text-amber-400" data-target="14">0</h3><p class="mt-2 text-lg text-gray-300">Projects Completed</p></div>
+                    <div class="reveal" style="transition-delay: 0.2s;"><h3 class="text-5xl font-orbitron font-bold text-amber-400" data-target="9">0</h3><p class="mt-2 text-lg text-gray-300">Happy Clients</p></div>
+                    <div class="reveal" style="transition-delay: 0.4s;"><h3 class="text-5xl font-orbitron font-bold text-amber-400" data-target="3">0</h3><p class="mt-2 text-lg text-gray-300">Years of Experience</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW: Interactive SVG Diagram -->
+        <section class="py-24">
+            <div class="container mx-auto px-4">
+                 <div class="text-center mb-16 reveal">
+                    <h2 class="text-4xl font-bold uppercase">Interactive Smart Home</h2>
+                    <p class="mt-4 text-gray-400 max-w-2xl mx-auto">Hover over the points to see how we integrate technology into every corner of your home.</p>
+                </div>
+                <div class="relative max-w-4xl mx-auto reveal">
+                    <!-- Simplified House SVG -->
+                    <svg viewBox="0 0 800 500" class="w-full h-auto">
+                        <path d="M400 50 L100 200 L100 450 L700 450 L700 200 Z" fill="#374151" stroke="#4B5563" stroke-width="4"/>
+                        <path d="M400 50 L700 200" stroke="#4B5563" stroke-width="4"/>
+                        <rect x="150" y="250" width="100" height="150" fill="#1F2937"/>
+                        <rect x="550" y="250" width="100" height="100" fill="#1F2937"/>
+                        <!-- Interactive Points -->
+                        <circle class="interactive-svg-point" cx="250" cy="150" r="15" fill="#FBBF24" data-tooltip="Solar Panel Integration"/>
+                        <circle class="interactive-svg-point" cx="650" cy="180" r="15" fill="#FBBF24" data-tooltip="Security Lighting & Cameras"/>
+                        <circle class="interactive-svg-point" cx="80" cy="350" r="15" fill="#FBBF24" data-tooltip="EV Charger Installation"/>
+                        <circle class="interactive-svg-point" cx="400" cy="350" r="15" fill="#FBBF24" data-tooltip="Smart Thermostat & HVAC"/>
+                        <circle class="interactive-svg-point" cx="580" cy="420" r="15" fill="#FBBF24" data-tooltip="Main Electrical Panel Upgrade"/>
+                    </svg>
+                </div>
+            </div>
+        </section
+        <!-- NEW: Testimonials Slider -->
+        <section class="py-24 bg-gray-900">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-4xl font-bold uppercase">Client Feedback</h2>
+                </div>
+                <div class="relative overflow-hidden max-w-3xl mx-auto glassmorphism rounded-lg p-8 reveal">
+                    <div id="testimonial-slider" class="testimonial-slider">
+                        <!-- Testimonial 1 -->
+                        <div class="testimonial-item text-center p-8">
+                            <img src="images/siz l.jpg" class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-amber-400">
+                            <p class="text-lg italic text-gray-300 mb-4">"Voltmaster's smart home installation was seamless. Our home is now more efficient and secure. Truly professional service!"</p>
+                            <p class="font-bold text-amber-400">- Lorna Mbone.</p>
+                         </div>
+                        <!-- Testimonial 2 -->
+                        <div class="testimonial-item text-center p-8">
+                            <img src="https://placehold.co/100x100/FBBF24/111827?text=MD" class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-amber-400">
+                            <p class="text-lg italic text-gray-300 mb-4">"They handled the entire electrical fit-out for our new office. On time, on budget, and exceptional quality."</p>
+                            <p class="font-bold text-amber-400">- Mark Waweru.</p>
+                        </div>
+                    </div>
+                    <button id="prev-testimonial" class="absolute top-1/2 left-4 transform -translate-y-1/2 text-white text-2xl"><i class="fas fa-chevron-left"></i></button>
+                    <button id="next-testimonial" class="absolute top-1/2 right-4 transform -translate-y-1/2 text-white text-2xl"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-24">
+            <div class="container mx-auto px-4">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="reveal">
+                        <h2 class="text-4xl font-bold uppercase mb-4">Pioneering engineering Excellence</h2>
+                        <div class="w-24 h-1 bg-amber-400 mb-6"></div>
+                        <p class="text-gray-400 mb-4">Since our inception, voltmaster has been at the forefront of the electrical industry, blending traditional craftsmanship with cutting-edge technology. Our mission is to deliver solutions that are not only powerful and efficient but also intelligent and future-proof.</p>
+                    </div>
+                    <div class="reveal" style="transition-delay: 0.2s;">
+                        <div class="relative"><img src="images/ttt and myself.jpg" class="rounded-lg shadow-2xl z-10 relative" alt="Team working"><div class="absolute -top-4 -left-4 w-full h-full border-4 border-amber-400 rounded-lg z-0"></div></div>
+                    </di
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW: Technology Section -->
+        <section class="py-24 bg-gray-900">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-4xl font-bold uppercase">Our Technology</h2>
+                    <p class="mt-4 text-gray-400 max-w-2xl mx-auto">Leveraging the latest tools and tech for superior results.</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div class="reveal"><i class="fas fa-camera-retro text-5xl text-amber-400 mb-4"></i><h3 class="text-xl font-bold">Thermal Imaging</h3></div>
+                    <div class="reveal"><i class="fas fa-robot text-5xl text-amber-400 mb-4"></i><h3 class="text-xl font-bold">Automation</h3></div>
+                    <div class="reveal"><i class="fas fa-chart-line text-5xl text-amber-400 mb-4"></i><h3 class="text-xl font-bold">Energy Audits</h3></div>
+                    <div class="reveal"><i class="fas fa-tools text-5xl text-amber-400 mb-4"></i><h3 class="text-xl font-bold">Advanced Diagnostics</h3></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW: Client Logos -->
+        <section class="py-16 overflow-hidden">
+            <div class="relative flex">
+                <div class="logo-marquee">
+                    <div class="flex-shrink-0 mx-8 text-4xl font-orbitron text-gray-500">S S Mehta & Sons ltd</div>
+                    <div class="flex-shrink-0 mx-8 text-4xl font-orbitron text-gray-500">Rox Engineering Ltd</div>
+                    <div class="flex-shrink-0 mx-8 text-4xl font-orbitron text-gray-500">Burhani Ltd</div>
+                    <div class="flex-shrink-0 mx-8 text-4xl font-orbitron text-gray-500">Cape Consult Limited</div>
+                    <div class="flex-shrink-0 mx-8 text-4xl font-orbitron text-gray-500">Ngasi Consulting Engineers</div>
+                </div>
+                <div class="logo-marquee" aria-hidden="true">
+                    <div class="flex-shrink-0 mx-8 text-4xl font-orbitron text-gray-500">S S Mehta & Sons ltd</div>
+                    <div class="flex-shrink-0 mx-8 text-4xl font-orbitron text-gray-500">Rox Engineering</div>
+                    <div class="flex-shrink-0 mx-8 text-4xl font-orbitron text-gray-500">Burhani Ltd</div>
+                    <div class="flex-shrink-0 mx-8 text-4xl font-orbitron text-gray-500">Cape Consult Limited</div>
+                    <div class="flex-shrink-0 mx-8 text-4xl font-orbitron text-gray-500">Ngasi Consulting Engineers</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW: Contact Section -->
+        <section id="contact" class="py-24">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-4xl font-bold uppercase">Contact Us</h2>
+                    <p class="mt-4 text-gray-400 max-w-2xl mx-auto">Ready to start your project? Reach out and let's build the future together.</p>
+                </div>
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <div class="reveal">
+                        <form id="contact-form" class="space-y-4">
+                            <input type="text" placeholder="Your Name" class="w-full p-4 bg-gray-800 border border-gray-700 rounded-md focus:ring-2 focus:ring-amber-400 focus:outline-none">
+                            <input type="email" placeholder="Your Email" class="w-full p-4 bg-gray-800 border border-gray-700 rounded-md focus:ring-2 focus:ring-amber-400 focus:outline-none">
+                            <textarea placeholder="Your Message" rows="5" class="w-full p-4 bg-gray-800 border border-gray-700 rounded-md focus:ring-2 focus:ring-amber-400 focus:outline-none"></textarea>
+                            <button type="submit" class="w-full bg-amber-400 text-gray-900 font-bold py-3 rounded-md hover:bg-amber-500 transition">Send Message</button>
+                        </form>
+                    </div>
+                    <div class="reveal text-lg">
+                        <p class="mb-4">You can also reach us via:</p>
+                        <ul class="space-y-4 text-gray-300">
+                            <li class="flex items-center"><i class="fas fa-phone text-amber-400 w-6 mr-3"></i> <a href="tel:+2540117698138" class="hover:text-amber-400">+2540117698138 </a></li>
+                            <li class="flex items-center"><i class="fas fa-envelope text-amber-400 w-6 mr-3"></i> <a href="mailto:info@voltmaster.com" class="hover:text-amber-400">contact@voltmaster.pro</a></li>
+                            <li class="flex items-start"><i class="fas fa-map-marker-alt text-amber-400 w-6 mr-3 mt-1"></i> <span Ruaka Road, RUAKA, </span></li>
+                        </ul>
+                        <div class="mt-8 rounded-lg overflow-hidden shadow-2xl">
+                            <iframe src="https://maps.google.com/maps?q=Karura,Nairobi,Kenya&output=embed" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" class="grayscale-[100%] invert-[1] contrast-[0.8]"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black py-12">
+        <div class="container mx-auto px-4 text-center text-gray-500">
+            <p class="font-orbitron text-2xl text-amber-400 mb-4"><i class="fas fa-bolt-lightning"></i> VOLTMASTER</p>
+            <p>© 2026 fatfree Studios Inc. All Rights Reserved. Redefining engineering Standards.<br>
+              Made with <span style="color: rgb(111, 0, 255);">❤</span> by <a href="https://www.fatfreestudios.com" target="_blank"
+                  class="text-primary">fatfree Studios</a></p>
+        </div>
+    </footer>
+
+    <!-- Quote Wizard Modal -->
+    <div id="quote-wizard-modal" class="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4 hidden">
+        <div class="glassmorphism rounded-lg shadow-2xl w-full max-w-2xl relative p-8">
+            <button id="close-quote-wizard" class="absolute top-4 right-4 text-2xl text-gray-300 hover:text-white">×</button>
+            <h2 class="text-3xl font-orbitron text-center mb-6">Request an Estimate</h2>
+            <form id="quote-form">
+                <div class="wizard-step active" data-step="1">
+                    <h3 class="text-xl font-semibold mb-4 text-amber-400">1. Select Service Type</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <label class="p-4 border-2 border-gray-600 rounded-md text-center cursor-pointer hover:border-amber-400 has-[:checked]:border-amber-400 has-[:checked]:bg-amber-400/10"><input type="radio" name="service_type" value="residential" class="hidden"><i class="fas fa-home text-3xl mb-2"></i><span class="block">Residential</span></label>
+                        <label class="p-4 border-2 border-gray-600 rounded-md text-center cursor-pointer hover:border-amber-400 has-[:checked]:border-amber-400 has-[:checked]:bg-amber-400/10"><input type="radio" name="service_type" value="commercial" class="hidden"><i class="fas fa-building text-3xl mb-2"></i><span class="block">Commercial</span></label>
+                    </div>
+                    <button type="button" class="wizard-next-btn mt-8 w-full bg-amber-400 text-gray-900 font-bold py-3 rounded-md hover:bg-amber-500 transition">Next</button>
+                </div>
+                <div class="wizard-step" data-step="2">
+                    <h3 class="text-xl font-semibold mb-4 text-amber-400">2. Project Details</h3>
+                    <textarea name="details" placeholder="Briefly describe your project..." class="w-full p-3 bg-gray-700 border border-gray-600 rounded-md focus:ring-2 focus:ring-amber-400 focus:outline-none h-32"></textarea>
+                    <div class="flex justify-between mt-8">
+                        <button type="button" class="wizard-prev-btn bg-gray-600 text-white font-bold py-3 px-6 rounded-md hover:bg-gray-500 transition">Back</button>
+                        <button type="button" class="wizard-next-btn bg-amber-400 text-gray-900 font-bold py-3 px-6 rounded-md hover:bg-amber-500 transition">Next</button>
+                    </div>
+                </div>
+                <div class="wizard-step" data-step="3">
+                    <h3 class="text-xl font-semibold mb-4 text-amber-400">3. Contact Information</h3>
+                    <div class="space-y-4">
+                        <input type="text" name="name" placeholder="Full Name" class="w-full p-3 bg-gray-700 border border-gray-600 rounded-md focus:ring-2 focus:ring-amber-400 focus:outline-none">
+                        <input type="email" name="email" placeholder="Email Address" class="w-full p-3 bg-gray-700 border border-gray-600 rounded-md focus:ring-2 focus:ring-amber-400 focus:outline-none">
+                    </div>
+                    <div class="flex justify-between mt-8">
+                        <button type="button" class="wizard-prev-btn bg-gray-600 text-white font-bold py-3 px-6 rounded-md hover:bg-gray-500 transition">Back</button>
+                        <button type="submit" class="bg-green-500 text-white font-bold py-3 px-6 rounded-md hover:bg-green-600 transition">Submit Request</button>
+                    </div>
+                </div>
+            </form>
+            <div id="form-status" class="mt-4 text-center"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
